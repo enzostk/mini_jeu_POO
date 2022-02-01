@@ -9,7 +9,7 @@ attr_accessor :name, :life_points, :weapon_level
     end
 
     def show_state
-        puts "#{@name} a #{life_points} points de vie."
+        print "#{@name} a #{life_points} points de vie."
     end
 
     def gets_damage(attack)
@@ -65,8 +65,8 @@ attr_accessor :weapon_level
         dice = rand(1..6)
         case dice
         when 1
-            puts"Tu n'as rien trouvé... "
-        when 2
+            puts "Tu n'as rien trouvé... "
+        when 2..5
             puts "Bravo, tu as trouvé un pack de +50 points de vie"
             @life_points += 50
             if @life_points > 100
@@ -80,7 +80,7 @@ attr_accessor :weapon_level
             #    break if @life_points = 100
             #    puts "Tu ne peux pas récupérer plus de points de vie."
             #end
-        when 3..6
+        when 6
             puts "Waow, tu as trouvé un pack de +80 points de vie !"
             @life_points += 80
             if @life_points > 100
@@ -95,6 +95,5 @@ attr_accessor :weapon_level
             #    puts "Tu ne peux pas récupérer plus de points de vie."
             #end
         end
-        return @life_points
     end
 end    
