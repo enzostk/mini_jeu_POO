@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'lib/game'
+require_relative 'lib/game'                 # Lie aux fichiers du dossier lib 
 require_relative 'lib/player'
 # <----------------------------  Début de partie  ---------------------------------->
 puts "--------------------------------------------------------"
@@ -15,7 +15,7 @@ puts "Quel est le prénom de votre combattant:"
 print "> "
 user = gets.chomp
 user = HumanPlayer.new(user)
-Ennemy = [player1 = Player.new("Josiane"),player2 = Player.new("José")]
+Ennemy = [player1 = Player.new("Josiane"),player2 = Player.new("José")]     #Crée 2 player de classe Player dans un array
 
 # <----------------------------      FIGHT    ------------------------------------->
 while user.life_points > 0 && (player1.life_points > 0 || player2.life_points > 0)
@@ -53,18 +53,16 @@ while user.life_points > 0 && (player1.life_points > 0 || player2.life_points > 
         if player.life_points > 0
            player.attack(user)
         else
-            puts"#{player} ne peut pas attaquer."
+            puts"#{player.name} ne peut pas attaquer."
         end
     end
 end
 
 # <---------------------------   Fin de partie   ------------------------------------->
-puts "La partie est fini !"
+    puts "La partie est fini !"
 
-if user.life_points == 0
-    puts "Dommage, J&J t'ont balayé sans respect."
-else 
-    puts "Bravo! Tu leur as mis une sacrée branlée!"
-end
-
-#binding.pry
+    if user.life_points == 0
+        puts "Dommage, J&J t'ont balayé sans respect."
+    else 
+        puts "Bravo! Tu leur as mis une sacrée branlée!"
+    end

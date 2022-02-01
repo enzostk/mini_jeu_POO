@@ -1,9 +1,11 @@
+#<---------------------------------------------------------------------------------- Class Player ----------------------------------------------------------------------------------->
+
 class Player
 
-attr_accessor :name, :life_points, :weapon_level
+attr_accessor :name, :life_points, :weapon_level                # Donner accès à une variable d'instance en lecture et en écriture
     
     def initialize (name)
-        @name = name
+        @name = name                                            # Définit une variable d'instance
         @life_points = 10
         @weapon_level = 1
     end
@@ -32,7 +34,11 @@ attr_accessor :name, :life_points, :weapon_level
 
 end
 
-class HumanPlayer < Player
+#<---------------------------------------------------------------------------------- /Class Player ----------------------------------------------------------------------------------->
+
+#<---------------------------------------------------------------------------------- Class HumanPlayer ----------------------------------------------------------------------------------->
+
+class HumanPlayer < Player                                    #Heritage de player pour HumanPlayer
 
 attr_accessor :weapon_level
 
@@ -97,3 +103,5 @@ attr_accessor :weapon_level
         end
     end
 end    
+
+#<---------------------------------------------------------------------------------- /Class HumanPlayer ----------------------------------------------------------------------------------->
